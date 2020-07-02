@@ -37,6 +37,16 @@ const greatestSum = (inputArr) => {
         }
         // console.log(sumArrElement(diagArr));
         allSum.push(sumArrElement(diagArr));
+
+        //calc backslash diagonal sum
+        const diagArr2 = [];
+        for (i = 0; i <= sideLen; i++) {
+            if ((sideLen - i) === idx) {
+                diagArr2.push(row[i]);
+            }
+        }
+        console.log(sumArrElement(diagArr2));
+        allSum.push(sumArrElement(diagArr2));
     });
 
     //calc the vertical sum
@@ -45,13 +55,8 @@ const greatestSum = (inputArr) => {
         allSum.push(sumArrElement(row));
     });
 
-
-
-    //calc backslash diagonal sum
     //display the biggest sum
     console.log('allSum: ', allSum);
 }
 
 greatestSum(inputArr); //180
-
-console.log(transposeArr(inputArr));
