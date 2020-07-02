@@ -37,26 +37,21 @@ const greatestSum = (inputArr) => {
 
     console.log('sideLen: ', sideLen);
     //calc the horizontal sum
-    inputArr.forEach((row, idx) => {
-        console.log('row: ', sumArrElement(row));
-        allSum.push(sumArrElement(row));
-    });
-
-    //calc the vertical sum
-    transposedArr.forEach(row => {
-        console.log('tranposed: ', sumArrElement(row));
-        allSum.push(sumArrElement(row));
-    });
-
     //calc diagonal sum
     const diagArr = []; //slash
     const diagArr2 = []; //backslash
     inputArr.forEach((row, idx) => {
+        //horizontal sum
+        console.log('row: ', sumArrElement(row));
+        allSum.push(sumArrElement(row));
+
         for (i = 0; i <= sideLen; i++) {
+            //slash
             if (i === idx) {
                 diagArr.push(row[i]);
             }
 
+            //backslash
             if ((sideLen - i) === idx) {
                 diagArr2.push(row[i]);
             }
@@ -68,10 +63,16 @@ const greatestSum = (inputArr) => {
     console.log('backslash: ', sumArrElement(diagArr2));
     allSum.push(sumArrElement(diagArr2));
 
+    //calc the vertical sum
+    transposedArr.forEach(row => {
+        console.log('tranposed: ', sumArrElement(row));
+        allSum.push(sumArrElement(row));
+    });
+
     //display the biggest sum
     console.log('allSum: ', allSum);
     console.log('maxSum: ', maxInArray(allSum));
 }
 
 greatestSum(arr); //180
-greatestSum(bigArray); //3232
+greatestSum(bigArray); //4148
