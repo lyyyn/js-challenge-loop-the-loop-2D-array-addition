@@ -1,4 +1,8 @@
-const inputArr =
+const arr = [ [10, 20, 30],
+            [40, 50, 60],
+            [70, -80, 90] ];
+
+const bigArray =
 [ [ 887, -541, -430, -590, 117, 172, -319, -18 ],
   [ -269, 964, 209, 840, -456, 156, 365, -568 ],
   [ 289, -41, 488, 198, 240, 124, -427, 214 ],
@@ -74,4 +78,5 @@ const greatestSum = (inputArr) => {
     console.log('maxSum: ', maxInArray(allSum));
 }
 
-greatestSum(inputArr); //180
+greatestSum(arr); //180
+greatestSum(bigArray); //3232
