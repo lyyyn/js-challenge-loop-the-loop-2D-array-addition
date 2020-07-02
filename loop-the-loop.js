@@ -45,7 +45,7 @@ const greatestSum = (inputArr) => {
                 diagArr2.push(row[i]);
             }
         }
-        console.log(sumArrElement(diagArr2));
+        // console.log(sumArrElement(diagArr2));
         allSum.push(sumArrElement(diagArr2));
     });
 
@@ -57,6 +57,7 @@ const greatestSum = (inputArr) => {
 
     //display the biggest sum
     console.log('allSum: ', allSum);
+    console.log('maxSum: ', allSum.reverse()[0]);
 }
 
 greatestSum(inputArr); //180
